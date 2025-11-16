@@ -41,10 +41,10 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
 
 /* === تنسيق قسم الجمل المتحركة الجديد === */
 #data-quotes {
-    /* لون خلفية داكن وشيك (تدرج من رمادي غامق إلى أسود ناعم) */
+    /* لون خلفية داكن وشيك */
     background: linear-gradient(90deg, #1f1f1f 0%, #171717 100%); 
-    border-top: 3px solid #667eea; /* شريط علوي بلون مميز للموقع */
-    border-bottom: 3px solid #667eea; /* شريط سفلي بلون مميز */
+    border-top: 3px solid #667eea; 
+    border-bottom: 3px solid #667eea; 
     color: white;
     padding: 3rem 1rem;
     text-align: center;
@@ -54,7 +54,9 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 30px rgba(0,0,0,0.7); 
-    /* === المسافة الجديدة 30px === */
+    
+    /* === المسافات المطلوبة (30px علوي وسفلي) === */
+    margin-top: 30px;
     margin-bottom: 30px; 
 }
 
@@ -363,8 +365,8 @@ if (quoteTextElement) {
     quoteTextElement.textContent = dataQuotes[currentQuoteIndex];
     quoteTextElement.classList.add('active');
     
-    // تشغيل الدالة لتغيير الجملة كل 3 ثوانٍ
-    setInterval(displayNextQuote, 3000); // 3000 مللي ثانية = 3 ثوانٍ
+    // === التعديل هنا: تم تغيير الزمن إلى 5000 مللي ثانية (5 ثوانٍ) ===
+    setInterval(displayNextQuote, 5000); 
 }
 // ==============================================
 </script>
