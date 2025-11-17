@@ -145,6 +145,26 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
     background: #39b5ab;
 }
 
+/* === Read More/Less Button Styling === */
+.toggle-btn {
+    background: #667eea; 
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 5px; 
+    margin-bottom: 10px; 
+    transition: background 0.3s ease;
+    display: block; 
+}
+.toggle-btn:hover {
+    background: #764ba2;
+}
+/* ==================================== */
+
 .tag {background:#333; padding:0.25rem 0.75rem; border-radius:15px; font-size:0.8rem; color:#f0f0f0;} 
 .contact-content {display:grid; grid-template-columns:1fr 1fr; gap:3rem; max-width:800px; margin:0 auto;}
 .contact-info h3 {color:#667eea; margin-bottom:1.5rem;}
@@ -174,7 +194,15 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
 footer {background:#000; color:white; text-align:center; padding:2rem 1rem;}
 .social-links {display:flex; justify-content:center; gap:1rem; margin:1rem 0;}
 .social-links a {color:white; font-size:1.5rem; transition:color 0.3s ease;}
-.social-links a:hover {color:#4ECDC4;}
+.social-links a:hover {
+    color:#4ECDC4;
+}
+
+/* تنسيق أيقونة واتساب عند المرور عليها */
+.social-links a[aria-label="WhatsApp"] i.fab.fa-whatsapp:hover {
+    color: #25D366; 
+}
+
 .embedded-dashboard { width: 100%; height: 350px; border: none; }
 .fade-in{opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease;}
 .fade-in.visible{opacity:1; transform:translateY(0);}
@@ -250,8 +278,13 @@ Tarek Nageh
 <div class="portfolio-content">
 <h3>Dashboard 1 - Sales Overview</h3>
 <p style="color:#f0f0f0; margin-bottom: 1.5rem; text-align:justify;">
-    **Case Study: Advanced Sales Performance Analysis (QoQ)**. This **Power BI Dashboard** was designed for executive decision-making, integrating data from multiple sources to track **9.9M Total Profit** from **20M Total Sales**, achieving 49.9% profitability. The **data analysis** highlighted significant performance variance across regions and a sharp sales drop in 2016 following a 2015 peak. I utilized **DAX** functions to create dynamic time-intelligence calculations (like Quarter-over-Quarter) and implemented interactive **data visualization** techniques to allow managers to instantly filter sales trends, identify low-performing states, and strategize for future growth. This comprehensive **Sales Analysis Dashboard** turns raw transaction data into clear, actionable insights.
+    Case Study: Advanced Sales Performance Analysis (QoQ). This Power BI Dashboard was designed for executive decision-making, integrating data from multiple sources to track 9.9M Total Profit from 20M Total Sales, achieving 49.9% profitability. 
+    <span class="read-more-content" id="content1">
+        The data analysis highlighted significant performance variance across regions and a sharp sales drop in 2016 following a 2015 peak. I utilized DAX functions to create dynamic time-intelligence calculations (like Quarter-over-Quarter) and implemented interactive data visualization techniques to allow managers to instantly filter sales trends, identify low-performing states, and strategize for future growth. This comprehensive Sales Analysis Dashboard turns raw transaction data into clear, actionable insights.
+    </span>
 </p>
+<button class="toggle-btn" data-target="content1" id="btn1">Read More</button>
+
 <div class="portfolio-buttons">
     <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiODUyOGYwZDEtZDc4Ny00NGYxLWExMTItOTM0NTg0MzkyNDg1IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
     <a href="#contact" class="request-btn">Request Access</a>
@@ -264,8 +297,12 @@ Tarek Nageh
 <div class="portfolio-content">
 <h3>Dashboard 2 - Employees Overview</h3>
 <p style="color:#f0f0f0; margin-bottom: 1.5rem; text-align:justify;">
-    **Case Study: HR Workforce Analysis and Headcount Planning**. This **Power BI Dashboard** provides a detailed overview of the organization's Human Resources data, covering **689 employees** and a total salary of **1.4M**. The **data analysis** focuses on departmental distribution (Manufacturing is largest), gender ratios (mostly male, 65%), and geographical distribution (Main center has the largest headcount of 251). I employed advanced filtering and **data visualization** to highlight the peak headcount period in 2019, enabling HR leaders to better understand employee trends, plan recruitment strategies, and manage compensation and workforce efficiency effectively.
+    Case Study: HR Workforce Analysis and Headcount Planning. This Power BI Dashboard provides a detailed overview of the organization's Human Resources data, covering 689 employees and a total salary of 1.4M. 
+    <span class="read-more-content" id="content2">
+        The data analysis focuses on departmental distribution (Manufacturing is largest), gender ratios (mostly male, 65%), and geographical distribution (Main center has the largest headcount of 251). I employed advanced filtering and data visualization to highlight the peak headcount period in 2019, enabling HR leaders to better understand employee trends, plan recruitment strategies, and manage compensation and workforce efficiency effectively.
+    </span>
 </p>
+<button class="toggle-btn" data-target="content2" id="btn2">Read More</button>
 <div class="portfolio-buttons">
     <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiZjQ3Mzg5Y2ItMTVkMy00MTgwLTljNWItYTU1YjA4Zjk2MTQwIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
     <a href="#contact" class="request-btn">Request Access</a>
@@ -278,10 +315,14 @@ Tarek Nageh
 <div class="portfolio-content">
 <h3>Dashboard 3 - Sales & COGS</h3>
 <p style="color:#f0f0f0; margin-bottom: 1.5rem; text-align:justify;">
-    **Case Study: Retail Profitability and Cost of Goods Sold (COGS) Analysis**. This **Power BI Dashboard** offers a focused view on retail financial health, tracking **15.38K Total Sales** and an average **COGS** of 307.59. The core of this **financial data analysis** is understanding profitability drivers, showing stable sales across key cities (Yangon, Naypyitaw, Mandalay) and analyzing payment distribution (Cash is the main payment at 34.4%). Through strategic **data visualization**, the dashboard allows stakeholders to analyze gender-based purchasing patterns (F52%/M48%) and identify opportunities to reduce COGS and maximize profit margins.
+    Case Study: Retail Profitability and Cost of Goods Sold (COGS) Analysis. This Power BI Dashboard offers a focused view on retail financial health, tracking 15.38K Total Sales and an average COGS of 307.59. 
+    <span class="read-more-content" id="content3">
+        The core of this financial data analysis is understanding profitability drivers, showing stable sales across key cities (Yangon, Naypyitaw, Mandalay) and analyzing payment distribution (Cash is the main payment at 34.4%). Through strategic data visualization, the dashboard allows stakeholders to analyze gender-based purchasing patterns (F52%/M48%) and identify opportunities to reduce COGS and maximize profit margins.
+    </span>
 </p>
+<button class="toggle-btn" data-target="content3" id="btn3">Read More</button>
 <div class="portfolio-buttons">
-    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiYjE5NmZmNzUtN2UyMC00NDFjLWIxN2UtMjdjYTExOWJjNDEyIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
+    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiYjE5NmZmNzUtN2UyMC00NDFjLWIxN2UtMjdjYTExOWJjNDEyIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImciOjl9" target="_blank" class="view-btn">View Dashboard</a>
     <a href="#contact" class="request-btn">Request Access</a>
 </div>
 </div>
@@ -338,8 +379,26 @@ Tarek Nageh
 
 <footer>
 <div class="social-links">
-    <a href="https://www.linkedin.com/in/tarek-nageh-7b724434a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn" style="text-decoration:none; color:white;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://github.com/Tarek343" target="_blank" aria-label="GitHub" style="text-decoration:none; color:white;"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://www.linkedin.com/in/tarek-nageh-7b724434a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+       target="_blank" 
+       aria-label="LinkedIn" 
+       style="text-decoration:none; color:white;">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    
+    <a href="https://github.com/Tarek343" 
+       target="_blank" 
+       aria-label="GitHub" 
+       style="text-decoration:none; color:white;">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+    
+    <a href="https://wa.me/201060440658" 
+       target="_blank" 
+       aria-label="WhatsApp" 
+       style="text-decoration:none; color:white;">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
 </div>
 <p>&copy; 2025 Tarek Nageh. All rights reserved.</p>
 </footer>
@@ -393,6 +452,46 @@ if (quoteTextElement) {
     // تم تغيير زمن العرض إلى 5000 مللي ثانية (5 ثوانٍ)
     setInterval(displayNextQuote, 5000); 
 }
+// ==============================================
+
+// ==============================================
+// Script for Read More / Read Less functionality
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Set initial state (Hide all expandable content)
+    document.querySelectorAll('.read-more-content').forEach(content => {
+        // Hide content initially
+        content.style.display = 'none';
+        
+        // Use inline-block for better text flow when shown
+        content.style.transition = 'opacity 0.5s ease'; 
+        content.style.opacity = '0'; // Prepare for fade-in effect
+    });
+
+    // Add click event listener to all toggle buttons
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+
+            if (content.style.display === 'none') {
+                // Expand (Read More)
+                content.style.display = 'inline'; 
+                setTimeout(() => {
+                    content.style.opacity = '1';
+                }, 10); 
+                this.textContent = 'Read Less';
+            } else {
+                // Collapse (Read Less)
+                content.style.opacity = '0';
+                setTimeout(() => {
+                    content.style.display = 'none';
+                }, 500); // Wait for fade-out transition to complete
+                this.textContent = 'Read More';
+            }
+        });
+    });
+});
 // ==============================================
 
 // ==============================================
