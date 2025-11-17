@@ -37,7 +37,7 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
 
 
 /* =================================================== */
-/* HOME SECTION STYLES (منقولة من home.html ومُعدلة) */
+/* HOME SECTION STYLES (مُعدَّلة) */
 .hero {
     background:linear-gradient(rgba(18,18,18,0.8),rgba(18,18,18,0.9)), #121212; 
     background-size:cover; 
@@ -53,38 +53,24 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
 .hero-content h1 {font-size:3.5rem; margin-bottom:1rem; animation:fadeInUp 1s ease;}
 .hero-content p {font-size:1.3rem; margin-bottom:2rem; animation:fadeInUp 1s ease 0.2s both;}
 
-/* SOCIAL ICONS STYLES (منقولة من home.html) */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 25px;
-    animation: fadeInUp 1s ease 0.6s both;
+/* NEW: CTA Button (View My Work) */
+.cta-button {
+    display:inline-block; 
+    background:#4ECDC4; 
+    color:#121212; 
+    padding:1rem 2rem; 
+    text-decoration:none; 
+    border-radius:50px; 
+    font-weight:bold; 
+    transition:transform 0.3s ease, box-shadow 0.3s ease; 
+    animation:fadeInUp 1s ease 0.4s both;
+    margin-bottom: 2rem; /* مسافة 2rem تقارب 32px، وهي قريبة من 4 سم المطلوبة */
 }
+.cta-button:hover {transform:translateY(-2px); box-shadow:0 10px 25px rgba(78, 205, 196, 0.4);}
+/* END NEW: CTA Button (View My Work) */
 
-.social-icons a {
-    color: white;
-    font-size: 2.2rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
 
-.social-icons a:hover {
-    transform: translateY(-3px);
-}
-
-.social-icons a[aria-label="LinkedIn"]:hover {
-    color: #0A66C2; 
-}
-
-.social-icons a[aria-label="WhatsApp"]:hover {
-    color: #25D366; 
-}
-
-.social-icons a[aria-label="GitHub"]:hover {
-    color: #6e5494; 
-}
-
-/* DATA QUOTES STYLES (منقولة من home.html) */
+/* DATA QUOTES STYLES */
 #data-quotes {
     background: linear-gradient(90deg, #1f1f1f 0%, #171717 100%); 
     border-top: 3px solid #667eea; 
@@ -113,7 +99,7 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
 
 .quote-text.active {opacity: 1; transform: translateY(0);}
 
-/* TEASER STYLES (منقولة من home.html) */
+/* TEASER STYLES */
 #teaser {
     background:#1a1a1a; 
     padding:3rem 1rem; 
@@ -333,25 +319,8 @@ Tarek Nageh
         <h1>Creative Data Analyst</h1>
         <p>Transforming data and dashboards into meaningful visual experiences</p>
         
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/tarek-nageh-7b724434a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-               target="_blank" 
-               aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            
-            <a href="https://wa.me/201060440658" 
-               target="_blank" 
-               aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            
-            <a href="https://github.com/Tarek343" 
-               target="_blank" 
-               aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
+        <a href="#portfolio" class="cta-button">View My Work</a> 
+        
         </div>
 </section>
 
