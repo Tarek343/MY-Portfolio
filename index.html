@@ -39,11 +39,10 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
 #home-iframe-container {
     padding-top: 70px; /* لتعويض شريط التنقل الثابت */
     width: 100%;
-    /* تم إزالة min-height: 100vh; */
 }
 #home-iframe {
     width: 100%;
-    /* تم إزالة height: 100vh; - سيتم ضبطه بواسطة JavaScript */
+    /* ارتفاع الـ iframe سيتم ضبطه بواسطة JavaScript */
     border: none;
     display: block;
     overflow-y: hidden; /* لمنع ظهور شريط تمرير داخل الـ iframe */
@@ -52,16 +51,14 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
 
 /* =================================================== */
 /* DRILL-DOWN MENU STYLES (القائمة الجانبية الجديدة) */
-/* زر فتح القائمة (الشرط الثلاث) */
 .menu-toggle {
-    display: none; /* إخفاء في وضع سطح المكتب */
+    display: none; 
     font-size: 1.5rem;
     cursor: pointer;
     color: white;
-    z-index: 1001; /* ليكون فوق الـ header */
+    z-index: 1001; 
 }
 
-/* القائمة الجانبية نفسها */
 .side-menu {
     position: fixed;
     top: 0;
@@ -70,18 +67,15 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
     width: 250px; 
     background: #1a1a1a; 
     z-index: 999;
-    padding-top: 80px; /* مساحة لرأس الصفحة */
+    padding-top: 80px; 
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
-    
-    /* الحالة الأولية: مخفية خارج الشاشة */
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
 }
 
 .side-menu.open {
-    /* حالة الإظهار */
     transform: translateX(0);
 }
 
@@ -98,13 +92,12 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
     background: #667eea;
 }
 
-/* Show hamburger icon and hide desktop links on smaller screens */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* إخفاء الروابط التقليدية */
+        display: none; 
     }
     .menu-toggle {
-        display: block; /* إظهار أيقونة القائمة */
+        display: block; 
     }
     nav {
         justify-content: space-between; 
@@ -313,7 +306,7 @@ Tarek Nageh
 </p>
 <button class="toggle-btn" data-target="content2" id="btn2">Read More</button>
 <div class="portfolio-buttons">
-    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiZjQ3Mzg5Y2ItMTVkMy00MTgwLTljNWItYTU1YjA4Zjk2MTQwIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
+    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiZjQ3Mzg5Y2ItMTVkMy00MTgwLTljNWItYTU1YjA4Zjk2MTQwIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImciOjl9" target="_blank" class="view-btn">View Dashboard</a>
     <a href="#contact" class="request-btn">Request Access</a>
 </div>
 </div>
@@ -413,7 +406,6 @@ Tarek Nageh
 </footer>
 
 <script>
-// Mobile Menu Toggle (OLD LOGIC REMOVED)
 // Smooth Scrolling 
 document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click', function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}
 });});
@@ -425,7 +417,7 @@ document.querySelectorAll('.fade-in').forEach(el=>{observer.observe(el);});
 
 
 // ==============================================
-// 3. New Drill-Down Menu Toggle Logic (JavaScript)
+// Drill-Down Menu Toggle Logic
 const menuToggle = document.querySelector('.menu-toggle');
 const sideMenu = document.getElementById('drill-down-menu');
 
@@ -433,10 +425,9 @@ menuToggle.addEventListener('click', () => {
     sideMenu.classList.toggle('open');
 });
 
-// Close menu when a link is clicked (for smooth scrolling)
+// Close menu when a link is clicked
 sideMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-        // Use a slight delay to ensure smooth scrolling starts before closing the menu
         setTimeout(() => {
             sideMenu.classList.remove('open');
         }, 300); 
@@ -448,35 +439,28 @@ sideMenu.querySelectorAll('a').forEach(link => {
 // Script for Read More / Read Less functionality
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Set initial state (Hide all expandable content)
     document.querySelectorAll('.read-more-content').forEach(content => {
-        // Hide content initially
         content.style.display = 'none';
-        
-        // Use inline-block for better text flow when shown
         content.style.transition = 'opacity 0.5s ease'; 
-        content.style.opacity = '0'; // Prepare for fade-in effect
+        content.style.opacity = '0'; 
     });
 
-    // Add click event listener to all toggle buttons
     document.querySelectorAll('.toggle-btn').forEach(button => {
         button.addEventListener('click', function() {
             const targetId = this.getAttribute('data-target');
             const content = document.getElementById(targetId);
 
             if (content.style.display === 'none') {
-                // Expand (Read More)
                 content.style.display = 'inline'; 
                 setTimeout(() => {
                     content.style.opacity = '1';
                 }, 10); 
                 this.textContent = 'Read Less';
             } else {
-                // Collapse (Read Less)
                 content.style.opacity = '0';
                 setTimeout(() => {
                     content.style.display = 'none';
-                }, 500); // Wait for fade-out transition to complete
+                }, 500); 
                 this.textContent = 'Read More';
             }
         });
@@ -490,92 +474,64 @@ const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 
 form.addEventListener('submit', async function(e) {
-    e.preventDefault(); // منع الإرسال الافتراضي
-
+    e.preventDefault(); 
     const data = new FormData(form);
     
     try {
         const response = await fetch(form.action, {
             method: form.method,
             body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
+            headers: {'Accept': 'application/json'}
         });
 
         if (response.ok) {
-            // عرض رسالة النجاح
             formStatus.style.display = 'block';
             formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-            form.reset(); // إفراغ حقول النموذج
-            
-            // إخفاء الرسالة بعد 4 ثواني
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 4000); 
+            form.reset(); 
+            setTimeout(() => {formStatus.style.display = 'none';}, 4000); 
         } else {
-            // في حالة فشل الإرسال (خطأ Formspree)
             formStatus.style.display = 'block';
             formStatus.style.backgroundColor = 'red';
             formStatus.textContent = 'Oops! There was an error sending your message.';
-            
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-                formStatus.style.backgroundColor = '#4ECDC4'; // إعادة اللون الأصلي
-            }, 4000);
+            setTimeout(() => {formStatus.style.display = 'none'; formStatus.style.backgroundColor = '#4ECDC4';}, 4000);
         }
     } catch (error) {
-        // في حالة فشل اتصال الشبكة
         formStatus.style.display = 'block';
         formStatus.style.backgroundColor = 'red';
         formStatus.textContent = 'Network error. Please try again later.';
-        
-        setTimeout(() => {
-                formStatus.style.display = 'none';
-                formStatus.style.backgroundColor = '#4ECDC4';
-        }, 4000);
+        setTimeout(() => {formStatus.style.display = 'none'; formStatus.style.backgroundColor = '#4ECDC4';}, 4000);
     }
 });
 // ==============================================
 
 // ==============================================
-// *** NEW: Dynamic Iframe Height Adjustment ***
+// DYNAMIC IFRAME HEIGHT ADJUSTMENT (مهم جداً لضبط ارتفاع Home)
 function adjustIframeHeight() {
     const iframe = document.getElementById('home-iframe');
 
-    // يجب أن يتم تحميل محتوى iframe بنجاح ليتمكن الكود من الوصول إلى خصائص محتواه
     iframe.onload = function() {
         try {
             // الحصول على ارتفاع محتوى ملف home.html (داخل الـ iframe)
             const contentHeight = iframe.contentWindow.document.body.scrollHeight;
             
-            // تعيين ارتفاع الـ iframe ليكون مساوياً لارتفاع المحتوى الداخلي
-            iframe.style.height = (contentHeight) + 'px';
-            
-            // بما أن الـ home.html يحتوي على قسم بطول 100vh، قد يكون الارتفاع كبيراً، لذا نحتاج لتعديل طفيف
-            // للتأكد من أن الأقسام الأخرى تظهر أسفله مباشرة
-            
-            // يتم ضبط الارتفاع لمرة واحدة بعد التحميل
-            console.log('Iframe height adjusted to: ' + contentHeight + 'px');
+            // تعيين ارتفاع الـ iframe ليكون مساوياً لارتفاع المحتوى الداخلي + هامش بسيط
+            iframe.style.height = (contentHeight + 20) + 'px'; 
 
         } catch (e) {
-            // يتم الوصول إلى هنا إذا كان ملف home.html ليس في نفس النطاق (Domain)
-            console.warn('Could not access iframe content for height adjustment. Ensure home.html is in the same directory/origin.', e);
+            // يتم الوصول إلى هنا إذا كان ملف home.html ليس في نفس النطاق (GitHub Pages)
+            console.warn('Could not access iframe content for height adjustment. Ensure home.html is uploaded correctly.', e);
         }
     };
+    
+    // محاولة تشغيل onload إذا كان المحتوى قد تم تحميله بالفعل
+    if (iframe.contentWindow.document.readyState === 'complete') {
+        iframe.onload();
+    }
 }
 
 // تشغيل الدالة عند تحميل الصفحة
 window.addEventListener('load', adjustIframeHeight);
-// تشغيل الدالة يدوياً في حالة عدم تحميل حدث window.load بشكل صحيح
-adjustIframeHeight();
 // ==============================================
-
-/*
-    ملاحظة: تحتاج إلى حفظ الملفين في نفس المجلد:
-    1. index.html (الكود أعلاه)
-    2. home.html (ملف الصفحة الرئيسية المنفصل الذي أرسلته لك سابقاً)
-*/
 </script>
 </body>
 </html>
