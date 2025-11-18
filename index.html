@@ -53,6 +53,16 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
 .hero-content h1 {font-size:3.5rem; margin-bottom:1rem; animation:fadeInUp 1s ease;}
 .hero-content p {font-size:1.3rem; margin-bottom:2rem; animation:fadeInUp 1s ease 0.2s both;}
 
+/* NEW: Container for both buttons */
+.hero-buttons-container {
+    display: flex;
+    flex-direction: column; /* Default for mobile */
+    gap: 20px; /* Space between buttons */
+    justify-content: center;
+    margin-bottom: 2rem; 
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
 /* NEW: CTA Button (View My Work) */
 .cta-button {
     display:inline-block; 
@@ -63,11 +73,30 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
     border-radius:50px; 
     font-weight:bold; 
     transition:transform 0.3s ease, box-shadow 0.3s ease; 
-    animation:fadeInUp 1s ease 0.4s both;
-    margin-bottom: 2rem; 
+    /* Removed animation delay and margin-bottom as they are now handled by the container */
 }
 .cta-button:hover {transform:translateY(-2px); box-shadow:0 10px 25px rgba(78, 205, 196, 0.4);}
 /* END NEW: CTA Button (View My Work) */
+
+/* NEW: CV Button Style for Hero Section */
+.cv-download-btn-hero {
+    display:inline-block; 
+    background:transparent; 
+    border: 2px solid #4ECDC4; 
+    color:#4ECDC4; 
+    padding:1rem 2rem; 
+    text-decoration:none; 
+    border-radius:50px; 
+    font-weight:bold; 
+    transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; 
+}
+.cv-download-btn-hero:hover {
+    transform:translateY(-2px); 
+    box-shadow:0 10px 25px rgba(78, 205, 196, 0.4);
+    background: #4ECDC4; 
+    color: #121212;
+}
+/* END CV Button Style for Hero Section */
 
 
 /* DATA QUOTES STYLES */
@@ -162,6 +191,13 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
     background: #667eea;
 }
 
+@media (min-width: 600px) {
+    /* For tablets/desktop, display buttons side-by-side */
+    .hero-buttons-container {
+        flex-direction: row; 
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none; 
@@ -185,7 +221,7 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
 .about-text h3 {font-size:1.5rem; margin-bottom:1rem; color:#667eea;}
 .about-text p {margin-bottom:1.5rem; text-align:justify;}
 
-/* NEW CV BUTTON STYLE (Download my CV) */
+/* OLD CV BUTTON STYLE (Download my CV) - Now only used for the profile image placement */
 .cv-download-btn {
     display:inline-block; 
     background:#4ECDC4; 
@@ -199,7 +235,7 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
     text-align: center;
 }
 .cv-download-btn:hover {transform:translateY(-2px); box-shadow:0 8px 15px rgba(78, 205, 196, 0.4);}
-/* END NEW CV BUTTON STYLE */
+/* END OLD CV BUTTON STYLE */
 
 
 .skills {display:flex; flex-wrap:wrap; gap:0.5rem;}
@@ -337,7 +373,13 @@ Tarek Nageh
         <h1>Creative Data Analyst</h1>
         <p>Transforming data and dashboards into meaningful visual experiences</p>
         
-        <a href="#portfolio" class="cta-button">View My Work</a> 
+        <div class="hero-buttons-container">
+            <a href="#portfolio" class="cta-button">View My Work</a> 
+            
+            <a href="Tarek_Nageh_Resume.pdf" download="Tarek_Nageh_Resume.pdf" class="cv-download-btn-hero">
+                Download my CV
+            </a>
+        </div>
         
     </div>
 </section>
@@ -374,9 +416,6 @@ Tarek Nageh
          alt="Tarek Nageh Profile Picture" 
          style="width:250px; height:250px; border-radius:50%; object-fit:cover; border:5px solid #667eea; display:block; margin:0 auto;">
     
-    <a href="Tarek_Nageh_Resume.pdf" download="Tarek_Nageh_Resume.pdf" class="cv-download-btn">
-        Download my CV
-    </a>
     </div>
 </div>
 </section>
@@ -398,7 +437,7 @@ Tarek Nageh
 <button class="toggle-btn" data-target="content1" id="btn1">Read More</button>
 
 <div class="portfolio-buttons">
-    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiODUyOGYwZDEtZDc4Ny00NGYxLWExMTItOTM0NTg0MzkyNDg1IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
+    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiODUyOGYwZDEtZDc4Ny00NGYxLWFxMTItOTM0NTg0MzkyNDg1IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
     <a href="#contact" class="request-btn">Request Access</a>
 </div>
 </div>
