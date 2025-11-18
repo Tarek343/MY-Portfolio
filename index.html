@@ -184,6 +184,24 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
 .about-content {display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;}
 .about-text h3 {font-size:1.5rem; margin-bottom:1rem; color:#667eea;}
 .about-text p {margin-bottom:1.5rem; text-align:justify;}
+
+/* NEW CV BUTTON STYLE (Download my CV) */
+.cv-download-btn {
+    display:inline-block; 
+    background:#4ECDC4; 
+    color:#121212; 
+    padding:0.75rem 1.5rem; 
+    text-decoration:none; 
+    border-radius:50px; 
+    font-weight:bold; 
+    transition:transform 0.3s ease, box-shadow 0.3s ease; 
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.cv-download-btn:hover {transform:translateY(-2px); box-shadow:0 8px 15px rgba(78, 205, 196, 0.4);}
+/* END NEW CV BUTTON STYLE */
+
+
 .skills {display:flex; flex-wrap:wrap; gap:0.5rem;}
 .skill-tag {background:#667eea; color:white; padding:0.5rem 1rem; border-radius:20px; font-size:0.9rem; transition:background 0.3s ease;}
 .skill-tag:hover {background:#764ba2;}
@@ -355,7 +373,11 @@ Tarek Nageh
     <img src="profile.jpg" 
          alt="Tarek Nageh Profile Picture" 
          style="width:250px; height:250px; border-radius:50%; object-fit:cover; border:5px solid #667eea; display:block; margin:0 auto;">
-</div>
+    
+    <a href="My_CV.pdf" download="Tarek_Nageh_CV.pdf" class="cv-download-btn">
+        Download my CV
+    </a>
+    </div>
 </div>
 </section>
 
