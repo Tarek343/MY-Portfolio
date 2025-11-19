@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarek Portfolio</title>
+
+<title>Tarek Portfolio | Professional Power BI Data Analyst & Dashboard Designer</title>
+<meta name="description" content="Tarek Nageh's Portfolio: Expert in Data Analysis, interactive Power BI & Fabric dashboard design, and translating complex data into actionable business decisions.">
+<meta name="keywords" content="Tarek Portfolio, Data Analyst, Power BI, Fabric, SQL, Dashboard Design, Data Visualization, Python, Creative Data Analyst">
+<meta name="author" content="Tarek Nageh">
+<meta name="robots" content="index, follow"> 
 <link rel="icon" href="favicon.jpg" type="image/jpeg">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
@@ -29,42 +34,88 @@ nav {display:flex; justify-content:space-between; align-items:center; max-width:
 .nav-links {display:flex; list-style:none; gap:2rem;}
 .nav-links a {color:white; text-decoration:none; transition:opacity 0.3s ease, color 0.3s ease;}
 .nav-links a:hover {opacity:0.8; color: #4ECDC4;}
-.mobile-menu {display:none; flex-direction:column; cursor:pointer;}
-.mobile-menu span {width:25px; height:3px; background:white; margin:3px 0; transition:0.3s;}
-.hero {background:linear-gradient(rgba(18,18,18,0.8),rgba(18,18,18,0.9)), #121212; background-size:cover; background-position:center; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; color:white; margin-top:60px;}
+
+
+/* =================================================== */
+/* HOME SECTION STYLES (مُعدَّلة) */
+.hero {
+    background:linear-gradient(rgba(18,18,18,0.8),rgba(18,18,18,0.9)), #121212; 
+    background-size:cover; 
+    background-position:center; 
+    min-height: 70vh; /* ارتفاع أقل */
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    text-align:center; 
+    color:white; 
+    padding: 70px 1rem 50px 1rem; /* لتعويض شريط التنقل الثابت */
+}
 .hero-content h1 {font-size:3.5rem; margin-bottom:1rem; animation:fadeInUp 1s ease;}
 .hero-content p {font-size:1.3rem; margin-bottom:2rem; animation:fadeInUp 1s ease 0.2s both;}
-.cta-button {display:inline-block; background:#4ECDC4; color:#121212; padding:1rem 2rem; text-decoration:none; border-radius:50px; font-weight:bold; transition:transform 0.3s ease, box-shadow 0.3s ease; animation:fadeInUp 1s ease 0.4s both;}
-.cta-button:hover {transform:translateY(-2px); box-shadow:0 10px 25px rgba(78, 205, 196, 0.4);}
-@keyframes fadeInUp {from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);}}
-section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
-.section-title {text-align:center; font-size:2.5rem; margin-bottom:3rem; color:#f0f0f0;} 
 
-/* === تنسيق قسم الجمل المتحركة الجديد === */
+/* NEW: Container for both buttons */
+.hero-buttons-container {
+    display: flex;
+    flex-direction: column; /* Default for mobile */
+    gap: 20px; /* Space between buttons */
+    justify-content: center;
+    margin-bottom: 2rem; 
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+/* NEW: CTA Button (View My Work) */
+.cta-button {
+    display:inline-block; 
+    background:#4ECDC4; 
+    color:#121212; 
+    padding:1rem 2rem; 
+    text-decoration:none; 
+    border-radius:50px; 
+    font-weight:bold; 
+    transition:transform 0.3s ease, box-shadow 0.3s ease; 
+    /* Removed animation delay and margin-bottom as they are now handled by the container */
+}
+.cta-button:hover {transform:translateY(-2px); box-shadow:0 10px 25px rgba(78, 205, 196, 0.4);}
+/* END NEW: CTA Button (View My Work) */
+
+/* NEW: CV Button Style for Hero Section */
+.cv-download-btn-hero {
+    display:inline-block; 
+    background:transparent; 
+    border: 2px solid #4ECDC4; 
+    color:#4ECDC4; 
+    padding:1rem 2rem; 
+    text-decoration:none; 
+    border-radius:50px; 
+    font-weight:bold; 
+    transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; 
+}
+.cv-download-btn-hero:hover {
+    transform:translateY(-2px); 
+    box-shadow:0 10px 25px rgba(78, 205, 196, 0.4);
+    background: #4ECDC4; 
+    color: #121212;
+}
+/* END CV Button Style for Hero Section */
+
+
+/* DATA QUOTES STYLES */
 #data-quotes {
-    /* لون خلفية داكن وشيك */
     background: linear-gradient(90deg, #1f1f1f 0%, #171717 100%); 
     border-top: 3px solid #667eea; 
     border-bottom: 3px solid #667eea; 
     color: white;
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem; 
     text-align: center;
     overflow: hidden; 
-    min-height: 150px; 
+    min-height: 100px; 
     display: flex; 
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 30px rgba(0,0,0,0.7); 
-    
-    /* === المسافات المطلوبة (30px علوي وسفلي) === */
-    margin-top: 30px;
-    margin-bottom: 30px; 
 }
 
-.quotes-container {
-    max-width: 900px; 
-    margin: 0 auto;
-}
+.quotes-container {max-width: 900px; margin: 0 auto;}
 
 .quote-text {
     font-size: 1.8rem; 
@@ -75,30 +126,118 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
     transform: translateY(20px); 
 }
 
-.quote-text.active {
-    opacity: 1; 
-    transform: translateY(0); 
+.quote-text.active {opacity: 1; transform: translateY(0);}
+
+/* TEASER STYLES */
+#teaser {
+    background:#1a1a1a; 
+    padding:3rem 1rem; 
+    text-align:center;
+}
+#teaser h3 {
+    color:#4ECDC4; 
+    font-size:1.8rem; 
+    margin-bottom:10px;
+}
+#teaser p {
+    color:#b0b0b0; 
+    max-width:700px; 
+    margin:0 auto; 
+    font-size:1.1rem;
+}
+/* =================================================== */
+
+
+/* =================================================== */
+/* DRILL-DOWN MENU STYLES */
+.menu-toggle {
+    display: none; 
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    z-index: 1001; 
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px; 
+    background: #1a1a1a; 
+    z-index: 999;
+    padding-top: 80px; 
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.side-menu.open {
+    transform: translateX(0);
+}
+
+.side-menu a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #2a2a2a;
+    transition: background 0.3s ease;
+}
+
+.side-menu a:hover {
+    background: #667eea;
+}
+
+@media (min-width: 600px) {
+    /* For tablets/desktop, display buttons side-by-side */
+    .hero-buttons-container {
+        flex-direction: row; 
+    }
 }
 
 @media (max-width: 768px) {
-    .quote-text {
-        font-size: 1.4rem;
+    .nav-links {
+        display: none; 
     }
+    .menu-toggle {
+        display: block; 
+    }
+    nav {
+        justify-content: space-between; 
+    }
+    .hero {min-height: 60vh;}
 }
-@media (max-width: 480px) {
-    .quote-text {
-        font-size: 1.1rem;
-    }
-    #data-quotes {
-        padding: 2rem 0.5rem;
-    }
-}
-/* === نهاية تنسيق قسم الجمل المتحركة === */
+/* =================================================== */
 
+
+@keyframes fadeInUp {from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);}}
+section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
+.section-title {text-align:center; font-size:2.5rem; margin-bottom:3rem; color:#f0f0f0;} 
 
 .about-content {display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;}
 .about-text h3 {font-size:1.5rem; margin-bottom:1rem; color:#667eea;}
 .about-text p {margin-bottom:1.5rem; text-align:justify;}
+
+/* OLD CV BUTTON STYLE (Download my CV) - Now only used for the profile image placement */
+.cv-download-btn {
+    display:inline-block; 
+    background:#4ECDC4; 
+    color:#121212; 
+    padding:0.75rem 1.5rem; 
+    text-decoration:none; 
+    border-radius:50px; 
+    font-weight:bold; 
+    transition:transform 0.3s ease, box-shadow 0.3s ease; 
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.cv-download-btn:hover {transform:translateY(-2px); box-shadow:0 8px 15px rgba(78, 205, 196, 0.4);}
+/* END OLD CV BUTTON STYLE */
+
+
 .skills {display:flex; flex-wrap:wrap; gap:0.5rem;}
 .skill-tag {background:#667eea; color:white; padding:0.5rem 1rem; border-radius:20px; font-size:0.9rem; transition:background 0.3s ease;}
 .skill-tag:hover {background:#764ba2;}
@@ -140,6 +279,26 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
     background: #39b5ab;
 }
 
+/* === Read More/Less Button Styling === */
+.toggle-btn {
+    background: #667eea; 
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 5px; 
+    margin-bottom: 10px; 
+    transition: background 0.3s ease;
+    display: block; 
+}
+.toggle-btn:hover {
+    background: #764ba2;
+}
+/* ==================================== */
+
 .tag {background:#333; padding:0.25rem 0.75rem; border-radius:15px; font-size:0.8rem; color:#f0f0f0;} 
 .contact-content {display:grid; grid-template-columns:1fr 1fr; gap:3rem; max-width:800px; margin:0 auto;}
 .contact-info h3 {color:#667eea; margin-bottom:1.5rem;}
@@ -169,7 +328,15 @@ section {padding:5rem 1rem; max-width:1200px; margin:0 auto;}
 footer {background:#000; color:white; text-align:center; padding:2rem 1rem;}
 .social-links {display:flex; justify-content:center; gap:1rem; margin:1rem 0;}
 .social-links a {color:white; font-size:1.5rem; transition:color 0.3s ease;}
-.social-links a:hover {color:#4ECDC4;}
+.social-links a:hover {
+    color:#4ECDC4;
+}
+
+/* تنسيق أيقونة واتساب عند المرور عليها */
+.social-links a[aria-label="WhatsApp"] i.fab.fa-whatsapp:hover {
+    color: #25D366; 
+}
+
 .embedded-dashboard { width: 100%; height: 350px; border: none; }
 .fade-in{opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease;}
 .fade-in.visible{opacity:1; transform:translateY(0);}
@@ -184,33 +351,49 @@ footer {background:#000; color:white; text-align:center; padding:2rem 1rem;}
 Tarek Nageh
 </div>
 <ul class="nav-links">
-<li><a href="#home">Home</a></li>
+<li><a href="#hero-content">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-<div class="mobile-menu"><span></span><span></span><span></span></div>
+<div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+</div>
 </nav>
 </header>
 
-<section id="home" class="hero">
-<div class="hero-content">
-<h1>Creative Data Analyst</h1>
-<p>Transforming data and dashboards into meaningful visual experiences</p>
-<a href="#portfolio" class="cta-button">View My Work</a> 
-</div>
+<nav id="drill-down-menu" class="side-menu">
+    <a href="#hero-content">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+</nav>
+<section id="hero-content" class="hero">
+    <div class="hero-content">
+        <h1>Creative Data Analyst</h1>
+        <p>Transforming data and dashboards into meaningful visual experiences</p>
+        
+        <div class="hero-buttons-container">
+            <a href="#portfolio" class="cta-button">View My Work</a> 
+            
+            <a href="Tarek_Nageh_Resume.pdf" download="Tarek_Nageh_Resume.pdf" class="cv-download-btn-hero">
+                Download my CV
+            </a>
+        </div>
+        
+    </div>
 </section>
 
-<section id="data-quotes" class="fade-in">
+<section id="data-quotes">
     <div class="quotes-container">
         <p id="data-quote-display" class="quote-text"></p>
     </div>
 </section>
-<section id="teaser" style="background:#1a1a1a; padding:3rem 1rem; text-align:center;" class="fade-in">
+
+<section id="teaser">
     <h3 style="color:#4ECDC4; font-size:1.8rem; margin-bottom:10px;">Turning Data Into Decisions.</h3>
     <p style="color:#b0b0b0; max-width:700px; margin:0 auto; font-size:1.1rem;">"My core mission is to transform complex datasets into clear, actionable, and visually engaging insights that drive business growth."</p>
 </section>
-
 <section id="about" class="fade-in">
 <h2 class="section-title">About Me</h2>
 <div class="about-content">
@@ -229,10 +412,11 @@ Tarek Nageh
 </div>
 </div>
 <div style="text-align:center;">
-    <img src="https://i.postimg.cc/XYwSZ03S/cropped-circle-image-(2)-LE-upscale-balanced-x4.jpg" 
+    <img src="profile.jpg" 
          alt="Tarek Nageh Profile Picture" 
          style="width:250px; height:250px; border-radius:50%; object-fit:cover; border:5px solid #667eea; display:block; margin:0 auto;">
-</div>
+    
+    </div>
 </div>
 </section>
 
@@ -244,9 +428,16 @@ Tarek Nageh
 <div class="portfolio-image" style="background-image: url('https://i.postimg.cc/1XGf3tRq/unnamed.png');"></div>
 <div class="portfolio-content">
 <h3>Dashboard 1 - Sales Overview</h3>
-<p>9.9M Total Profit from 20M Total Sales, achieving 49.9% profitability. Performance varies across states (Amazing to Poor). 2015 high sales dropped sharply in 2016.</p>
+<p style="color:#f0f0f0; margin-bottom: 1.5rem; text-align:justify;">
+    Case Study: Advanced Sales Performance Analysis (QoQ). This Power BI Dashboard was designed for executive decision-making, integrating data from multiple sources to track 9.9M Total Profit from 20M Total Sales, achieving 49.9% profitability. 
+    <span class="read-more-content" id="content1">
+        The data analysis highlighted significant performance variance across regions and a sharp sales drop in 2016 following a 2015 peak. I utilized DAX functions to create dynamic time-intelligence calculations (like Quarter-over-Quarter) and implemented interactive data visualization techniques to allow managers to instantly filter sales trends, identify low-performing states, and strategize for future growth. This comprehensive Sales Analysis Dashboard turns raw transaction data into clear, actionable insights.
+    </span>
+</p>
+<button class="toggle-btn" data-target="content1" id="btn1">Read More</button>
+
 <div class="portfolio-buttons">
-    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiODUyOGYwZDEtZDc4Ny00NGYxLWExMTItOTM0NTg0MzkyNDg1IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
+    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiODUyOGYwZDEtZDc4Ny00NGYxLWFxMTItOTM0NTg0MzkyNDg1IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
     <a href="#contact" class="request-btn">Request Access</a>
 </div>
 </div>
@@ -256,9 +447,15 @@ Tarek Nageh
 <div class="portfolio-image" style="background-image: url('Https://i.postimg.cc/Qd4VtvDb/unnamed-(1).png');"></div>
 <div class="portfolio-content">
 <h3>Dashboard 2 - Employees Overview</h3>
-<p>689 employees, total salary 1.4M, avg job rate 3.59. Main center largest headcount 251. Workforce mostly male (65%). Manufacturing largest department. Peak headcount 2019.</p>
+<p style="color:#f0f0f0; margin-bottom: 1.5rem; text-align:justify;">
+    Case Study: HR Workforce Analysis and Headcount Planning. This Power BI Dashboard provides a detailed overview of the organization's Human Resources data, covering 689 employees and a total salary of 1.4M. 
+    <span class="read-more-content" id="content2">
+        The data analysis focuses on departmental distribution (Manufacturing is largest), gender ratios (mostly male, 65%), and geographical distribution (Main center has the largest headcount of 251). I employed advanced filtering and data visualization to highlight the peak headcount period in 2019, enabling HR leaders to better understand employee trends, plan recruitment strategies, and manage compensation and workforce efficiency effectively.
+    </span>
+</p>
+<button class="toggle-btn" data-target="content2" id="btn2">Read More</button>
 <div class="portfolio-buttons">
-    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiZjQ3Mzg5Y2ItMTVkMy00MTgwLTljNWItYTU1YjA4Zjk2MTQwIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
+    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiZjQ3Mzg5Y2ItMTVkMy00MTgwLTljNWItYTU1YjA4Zjk2MTQwIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImciOjl9" target="_blank" class="view-btn">View Dashboard</a>
     <a href="#contact" class="request-btn">Request Access</a>
 </div>
 </div>
@@ -268,14 +465,37 @@ Tarek Nageh
 <div class="portfolio-image" style="background-image: url('Https://i.postimg.cc/cCSL2SRz/unnamed-(2).png');"></div>
 <div class="portfolio-content">
 <h3>Dashboard 3 - Sales & COGS</h3>
-<p>Total sales 15.38K, avg COGS 307.59, gender distribution F52%/M48%, main payment Cash 34.4%. Stable sales across Yangon, Naypyitaw, Mandalay.</p>
+<p style="color:#f0f0f0; margin-bottom: 1.5rem; text-align:justify;">
+    Case Study: Retail Profitability and Cost of Goods Sold (COGS) Analysis. This Power BI Dashboard offers a focused view on retail financial health, tracking 15.38K Total Sales and an average COGS of 307.59. 
+    <span class="read-more-content" id="content3">
+        The core of this financial data analysis is understanding profitability drivers, showing stable sales across key cities (Yangon, Naypyitaw, Mandalay) and analyzing payment distribution (Cash is the main payment at 34.4%). Through strategic data visualization, the dashboard allows stakeholders to analyze gender-based purchasing patterns (F52%/M48%) and identify opportunities to reduce COGS and maximize profit margins.
+    </span>
+</p>
+<button class="toggle-btn" data-target="content3" id="btn3">Read More</button>
 <div class="portfolio-buttons">
-    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiYjE5NmZmNzUtN2UyMC00NDFjLWIxN2UtMjdjYTExOWJjNDEyIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9" target="_blank" class="view-btn">View Dashboard</a>
+    <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiYjE5NmZmNzUtN2UyMC00NDFjLWIxN2UtMjdjYTExOWJjNDEyIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImciOjl9" target="_blank" class="view-btn">View Dashboard</a>
     <a href="#contact" class="request-btn">Request Access</a>
 </div>
 </div>
 </div>
 
+<div class="portfolio-item fade-in">
+<div class="portfolio-image" style="background-image: url('Https://i.postimg.cc/HWVtYjZz/IMG-20251119-WA0004.jpg');"></div>
+<div class="portfolio-content">
+<h3>Dashboard 4 - Sales and Profit Performance Analysis</h3>
+<p style="color:#f0f0f0; margin-bottom: 1.5rem; text-align:justify;">
+    Case Study: *Comprehensive Sales and Profitability Tracking* for Retail. This advanced Excel Dashboard offers a dynamic view of sales metrics, profit margins, and detailed geographical/product distribution across various Egyptian branches and segments. 
+    <span class="read-more-content" id="content4">
+        The analysis integrates *Sales, Profit, and Detailed Item Metrics* across three interconnected dashboards (Sales, Profit, and Details). Key features include: tracking high sales ($62.7K$), maximum profit ($3.1K$), *dynamic filters* by Branch and Geographic Segment, and a deep-dive table showing profitability by product category (Smartphones/Tablets) in each branch. The use of Excel's power features ensures real-time, actionable insights for strategic decision-making and performance monitoring.
+    </span>
+</p>
+<button class="toggle-btn" data-target="content4" id="btn4">Read More</button>
+<div class="portfolio-buttons">
+    <a href="https://1drv.ms/x/c/e282ab2d6badad2c/Ec5r_Fz4TPBDtFBD6tX9X98BjsJBszV87qVTU6688g7dyg?e=00MOfl" target="_blank" class="view-btn">View Dashboard</a>
+    <a href="#contact" class="request-btn">Request Access</a>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -327,26 +547,131 @@ Tarek Nageh
 
 <footer>
 <div class="social-links">
-    <a href="https://www.linkedin.com/in/tarek-nageh-7b724434a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn" style="text-decoration:none; color:white;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://github.com/Tarek343" target="_blank" aria-label="GitHub" style="text-decoration:none; color:white;"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://www.linkedin.com/in/tarek-nageh-7b724434a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+       target="_blank" 
+       aria-label="LinkedIn" 
+       style="text-decoration:none; color:white;">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    
+    <a href="https://github.com/Tarek343" 
+       target="_blank" 
+       aria-label="GitHub" 
+       style="text-decoration:none; color:white;">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+    
+    <a href="https://wa.me/201060440658" 
+       target="_blank" 
+       aria-label="WhatsApp" 
+       style="text-decoration:none; color:white;">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
 </div>
 <p>&copy; 2025 Tarek Nageh. All rights reserved.</p>
 </footer>
 
 <script>
-// Mobile Menu Toggle
-const mobileMenu = document.querySelector('.mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-mobileMenu.addEventListener('click', ()=>{navLinks.classList.toggle('active');});
 // Smooth Scrolling 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click', function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}navLinks.classList.remove('active');});});
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click', function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start', block: (this.getAttribute('href') === '#hero-content' ? 'start' : 'center')});}
+});});
+
 // Fade-in Animation
 const observerOptions={threshold:0.1,rootMargin:'0px 0px -50px 0px'};
 const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},observerOptions);
 document.querySelectorAll('.fade-in').forEach(el=>{observer.observe(el);});
 
+
 // ==============================================
-// الدوال الخاصة بالجمل المتحركة (اقتباسات مشهورة)
+// Drill-Down Menu Toggle Logic
+const menuToggle = document.querySelector('.menu-toggle');
+const sideMenu = document.getElementById('drill-down-menu');
+
+menuToggle.addEventListener('click', () => {
+    sideMenu.classList.toggle('open');
+});
+
+// Close menu when a link is clicked
+sideMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        setTimeout(() => {
+            sideMenu.classList.remove('open');
+        }, 300); 
+    });
+});
+// ==============================================
+
+// ==============================================
+// Script for Read More / Read Less functionality
+document.addEventListener('DOMContentLoaded', () => {
+    
+    document.querySelectorAll('.read-more-content').forEach(content => {
+        content.style.display = 'none';
+        content.style.transition = 'opacity 0.5s ease'; 
+        content.style.opacity = '0'; 
+    });
+
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+
+            if (content.style.display === 'none') {
+                content.style.display = 'inline'; 
+                setTimeout(() => {
+                    content.style.opacity = '1';
+                }, 10); 
+                this.textContent = 'Read Less';
+            } else {
+                content.style.opacity = '0';
+                setTimeout(() => {
+                    content.style.display = 'none';
+                }, 500); 
+                this.textContent = 'Read More';
+            }
+        });
+    });
+});
+// ==============================================
+
+// ==============================================
+// AJAX Form Submission for Success Message (Formspree)
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+form.addEventListener('submit', async function(e) {
+    e.preventDefault(); 
+    const data = new FormData(form);
+    
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {'Accept': 'application/json'}
+        });
+
+        if (response.ok) {
+            formStatus.style.display = 'block';
+            formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+            form.reset(); 
+            setTimeout(() => {formStatus.style.display = 'none';}, 4000); 
+        } else {
+            formStatus.style.display = 'block';
+            formStatus.style.backgroundColor = 'red';
+            formStatus.textContent = 'Oops! There was an error sending your message.';
+            setTimeout(() => {formStatus.style.display = 'none'; formStatus.style.backgroundColor = '#4ECDC4';}, 4000);
+        }
+    } catch (error) {
+        formStatus.style.display = 'block';
+        formStatus.style.backgroundColor = 'red';
+        formStatus.textContent = 'Network error. Please try again later.';
+        setTimeout(() => {formStatus.style.display = 'none'; formStatus.style.backgroundColor = '#4ECDC4';}, 4000);
+    }
+});
+// ==============================================
+
+// ==============================================
+// Quotes Display Logic (منقولة من home.html)
 const dataQuotes = [
     "Data is the new oil.",
     "Without big data analytics, companies are blind and deaf, wandering out onto the web like deer on a freeway.",
@@ -363,79 +688,19 @@ let currentQuoteIndex = 0;
 const quoteTextElement = document.getElementById('data-quote-display');
 
 function displayNextQuote() {
-    // إزالة الفئة 'active' لإخفاء النص الحالي وبدء الانتقال
     quoteTextElement.classList.remove('active');
-
-    // بعد فترة وجيزة (لتتمكن حركة الاختفاء من الإكتمال)، تحديث النص وإظهاره
     setTimeout(() => {
         currentQuoteIndex = (currentQuoteIndex + 1) % dataQuotes.length;
         quoteTextElement.textContent = dataQuotes[currentQuoteIndex];
         quoteTextElement.classList.add('active');
-    }, 1000); // تأخير 1000 مللي ثانية (1 ثانية) للسماح بالانتقال
+    }, 1000); 
 }
 
-// عرض أول جملة فوراً عند تحميل الصفحة
 if (quoteTextElement) {
     quoteTextElement.textContent = dataQuotes[currentQuoteIndex];
     quoteTextElement.classList.add('active');
-    
-    // تم تغيير زمن العرض إلى 5000 مللي ثانية (5 ثوانٍ)
     setInterval(displayNextQuote, 5000); 
 }
-// ==============================================
-
-// ==============================================
-// AJAX Form Submission for Success Message (Formspree)
-const form = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-
-form.addEventListener('submit', async function(e) {
-    e.preventDefault(); // منع الإرسال الافتراضي
-
-    const data = new FormData(form);
-    
-    try {
-        const response = await fetch(form.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            // عرض رسالة النجاح
-            formStatus.style.display = 'block';
-            formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-            form.reset(); // إفراغ حقول النموذج
-            
-            // إخفاء الرسالة بعد 4 ثواني
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 4000); 
-        } else {
-            // في حالة فشل الإرسال (خطأ Formspree)
-            formStatus.style.display = 'block';
-            formStatus.style.backgroundColor = 'red';
-            formStatus.textContent = 'Oops! There was an error sending your message.';
-            
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-                formStatus.style.backgroundColor = '#4ECDC4'; // إعادة اللون الأصلي
-            }, 4000);
-        }
-    } catch (error) {
-        // في حالة فشل اتصال الشبكة
-        formStatus.style.display = 'block';
-        formStatus.style.backgroundColor = 'red';
-        formStatus.textContent = 'Network error. Please try again later.';
-        
-        setTimeout(() => {
-            formStatus.style.display = 'none';
-            formStatus.style.backgroundColor = '#4ECDC4';
-        }, 4000);
-    }
-});
 // ==============================================
 </script>
 </body>
